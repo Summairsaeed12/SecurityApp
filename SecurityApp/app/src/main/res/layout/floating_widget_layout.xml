@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <!--   Root container of Floating Widget View  -->
+    <RelativeLayout
+
+        android:visibility="visible"
+        android:id="@+id/root_container"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <!--  View while view is collapsed  -->
+
+        <RelativeLayout
+            android:id="@+id/collapse_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <!--   ImageView of floating widget  -->
+            <ImageView
+                android:id="@+id/collapsed_iv"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/spicon"
+                tools:ignore="ContentDescription" />
+
+            <!--   Close button to close Floating Widget View  -->
+            <ImageView
+                android:id="@+id/close_floating_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/circle_shape"
+                android:src="@drawable/ic_close_white_24dp"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+        <!--   View while view is expanded   -->
+        <LinearLayout
+
+
+
+            android:id="@+id/expanded_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/icon_group"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/spicon"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="40dp"
+
+                android:layout_height="140dp"
+                android:layout_marginLeft="5dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+                <!--  ImageView to Close Expanded View  -->
+                <ImageView
+                    android:id="@+id/close_expanded_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottomleftshap"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_close_black_24dp" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@android:color/transparent" />
+                <!--  ImageView to Open Activity  -->
+                <ImageView
+                    android:id="@+id/open_activity_button"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottomleftshap"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_aspect_ratio_black_24dp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/bottomright"
+                    android:gravity="center_vertical">
+
+                    <!--             android:progressDrawable="@drawable/progress"-->
+                    <!--             android:thumb="@drawable/thumb"-->
+
+                    <SeekBar
+
+                        style="@style/MySeekBar"
+                        android:thumb="@drawable/thumb"
+                        android:id="@+id/floating_widget_title_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/expanded_container"
+                        android:gravity="center_vertical"
+                        android:text="@string/floating_widget_label"
+                        android:textColor="@android:color/black" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+
+                    android:layout_height="5dp"
+                    android:background="@android:color/transparent" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/bottomright"
+                    android:gravity="center_vertical">
+
+                    <SeekBar
+
+
+                        style="@style/MySeekBar"
+                        android:id="@+id/floating_widget_detail_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:thumb="@drawable/thumb"
+                        android:thumbTintMode="screen" />
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottomright">
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:visibility="gone"
+        android:id="@+id/background"
+        android:background="@android:color/black"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+    <ImageView
+        android:id="@+id/visibilitybtn"
+        android:background="@color/transperent"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/arrow"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+
+    />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/expanded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expanded_container"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:visibility="gone" />
+</LinearLayout>
